@@ -1,3 +1,1 @@
 Flask==2.3.3
-flask-cors==4.0.0     # 若需要處理跨域
-flasgger==0.9.7       # 若想加 Swagger 文件
