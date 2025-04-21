@@ -44,5 +44,5 @@ def apply_overtime(emp_id):
     return jsonify({"message": "加班申請成功", "record": record}), 201
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080)
 
