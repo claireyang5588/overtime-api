@@ -51,6 +51,9 @@ employee_directory = [
 
 @app.route('/v1/employee/contact', methods=['GET'])
 def get_employee_contact():
+    print("🔎 Headers:", request.headers)
+    print("🔎 Query string:", request.query_string.decode('utf-8'))
+    print("🔎 Args:", request.args)
     query = request.args.get("query", "").strip()
     if not query:
         return jsonify({"error": "請提供查詢參數 query，例如員工 ID 或姓名"}), 400
