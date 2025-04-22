@@ -35,12 +35,14 @@ def get_overtime(emp_id):
 # 申請加班
 @app.route('/v1/demo/hr/<emp_id>/overtime', methods=['POST'])
 def apply_overtime(emp_id):
-    print("收到加班申請 POST！")
+    print("🔹 Raw request.data:", request.data)
+    print("🔹 Headers:", request.headers)
+    print("🔹 is_json:", request.is_json)
     data = request.get_json(silent=True)
-    print("收到的資料：", data)
+    print("🔹 Parsed JSON:", data)
 
     if data is None:
-        return jsonify({"error": "未收到有效 JSON 資料"}), 400
+        return jsonify({"error": "未收到有效 JSON"}), 400
 
     record = {
         "date": data.get("startTime")[:10],
