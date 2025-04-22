@@ -62,7 +62,8 @@ def get_employee_contact():
         return jsonify({"message": f"查無與 '{query}' 相關的員工資料"}), 404
 
     # 回傳第一筆（或全部也可以，視需求）
-    return jsonify(results[0])
+    #return jsonify(results[0])
+     return jsonify(results)
 
 # 測試基本路由
 @app.route('/', methods=['GET'])
